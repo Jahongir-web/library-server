@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 const runServer = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/libraryApp', {
+    await mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
