@@ -6,6 +6,7 @@ const fileUpload = require('express-fileupload');
 
 // routes
 const userRouter = require('./src/routes/userRouter')
+const categoryRouter = require('./src/routes/categoryRouter')
 
 dotenv.config()
 const app = express();
@@ -22,6 +23,7 @@ app.use(cors());
 
 // Routes
 app.use('/user', userRouter)
+app.use('/category', categoryRouter)
 
 app.get('/', (req, res) => {
   res.send('ok')
